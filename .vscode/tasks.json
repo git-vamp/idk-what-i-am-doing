@@ -1,0 +1,54 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "ts",
+			"problemMatcher": [],
+
+			"label": "tsc",
+			"icon": {"id": "run"},
+
+			"detail": "monitoring ts files for changes",
+			"group": {
+				"kind": "build",
+				"isDefault": true,
+			},
+			"presentation": {
+				"echo": false,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false,
+				"group": "build"
+
+			},
+			"runOptions": {"runOn": "folderOpen", "instanceLimit": 1},
+		
+		},
+		{
+			"type": "npm",
+			"script": "tailwind",
+			"presentation": {
+				"echo": false,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false,
+				"group": "build"
+			},
+			"problemMatcher": [],
+			"runOptions": {"runOn": "folderOpen", "instanceLimit": 1},
+			"label": "css",
+			"icon": {"id": "run"},
+			"detail": "monitoring styles files for changes",
+			"group": {
+				"kind": "build",
+				"isDefault": true,
+			
+			}
+		}
+	]
+}

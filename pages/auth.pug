@@ -1,0 +1,28 @@
+extends base.pug
+block head 
+    meta(title="Sign/Login")
+    meta(property="og:title" content="Test Site")
+    meta(property="og:description" content="Test Site!")
+    meta(property="og:type" content="website")
+block body 
+    if status
+        div(class="bg-gray-400 text-gray-900 text-center  rounded-sm text-lg pt-2 pb-2 pl-2 pr-2 z-10 absolute w-screen")
+            h1 #{status} 
+    div(class="flex items-center justify-center max-h-max h-screen")          
+        form(action="/auth" method="post" class="bg-gray-900  border-l-4 border-gray-500 pl-4 pr-4 w-80 pt-2")
+
+            h1(class="text-gray-400 text-base font-semibold mb-4") Welcome!
+            label(for="user" class="text-gray-400 text-sm font-semibold mb-4") User
+            br
+            input(required  name="user" type="text" class="placeholder-shown:pb-2 mr-2 text-gray-400 placeholder:border-gray-700 placeholder-shown:text-base bg-transparent border-b-2 pb-2  border-gray-500 text-base  mb-4 focus:outline-none" )
+            br
+            label(for="password" class="text-gray-400 text-sm font-semibold mb-4") Password
+            br
+            input(required  name="password" type="password" class="placeholder-shown:pb-2 text-gray-400 placeholder:border-gray-700 placeholder-shown:text-base bg-transparent border-b-2 pb-2  border-gray-500 text-base  mb-2 focus:outline-none"  ondblclick="this.type = (this.type === 'text') ? 'password' : 'text'")
+            p(class="text-xs text-gray-400") double click to toggle visibility
+
+            div(class="pt-1 pb-2 ")
+                input(name="action" class="text-gray-400 font-semibold" type="submit" value="Login") 
+                span(class  ="mr-2 ml-2 text-gray-400") |
+                input(name="action" class="text-gray-400 font-semibold" type="submit" value="Register") 
+
